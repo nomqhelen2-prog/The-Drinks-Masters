@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
-import ladiesImage from "../assets/image ladies.jpg";
-import mixingImage from "../assets/mixing.jpeg";
+import { blobUrl } from "../lib/blob";
+
+const ladiesImage = blobUrl("image ladies.webp");
+const mixingImage = blobUrl("mixing.webp");
 
 const STORY_IMAGE =
   "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1200&q=80";

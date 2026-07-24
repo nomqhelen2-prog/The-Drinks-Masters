@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 
-import contactImage from "../assets/contact us.jpeg";
+import { blobUrl } from "../lib/blob";
+
+const contactImage = blobUrl("contact us.webp");
 
 // EmailJS config — replace with real values or set VITE_EMAILJS_* env vars
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID ?? "";

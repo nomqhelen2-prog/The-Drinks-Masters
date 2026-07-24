@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { FaWhatsapp, FaEnvelope, FaInstagram } from "react-icons/fa";
 
-import logo from "../assets/logo-removebg-preview (1).png";
+import { blobUrl } from "../lib/blob";
+
+const logo = blobUrl("logo-removebg-preview (1).webp");
 
 const navLinks = [
   { to: "/", label: "Home" },

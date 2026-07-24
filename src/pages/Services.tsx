@@ -1,24 +1,26 @@
 import { useEffect } from "react";
 
-import mobileBarImage from "../assets/mobile bar1.jpeg";
-import cocktailImage from "../assets/signature cocktails.jpeg";
-import coffeeImage from "../assets/coffee bars.jpeg";
-import brandActivationImage from "../assets/luxury brand activations.jpeg";
+import { blobUrl } from "../lib/blob";
 
-import bar1 from "../assets/mobile bar1.jpeg";
-import bar2 from "../assets/mobile bar2.jpg";
-import bar3 from "../assets/mobile bar 3.jpeg";
-import bar4 from "../assets/mobile bar 4.jpeg";
-import bar5 from "../assets/mobile bar 5.jpg";
-import bar6 from "../assets/mobile bar 6.jpeg";
-import bar7 from "../assets/mobile bar 7.jpeg";
+const mobileBarImage = blobUrl("mobile bar1.webp");
+const cocktailImage = blobUrl("signature cocktails.webp");
+const coffeeImage = blobUrl("coffee bars.webp");
+const brandActivationImage = blobUrl("luxury brand activations.webp");
 
-import corporateImage from "../assets/mobile bar team.jpeg";
-import weddingImage from "../assets/weddings.jpeg";
-import celebrationImage from "../assets/image celebration.jpg";
-import launchImage from "../assets/EOSR0341.jpg";
-import vipImage from "../assets/groups.jpeg";
-import consultationImage from "../assets/_MG_5385.jpg";
+const bar1 = blobUrl("mobile bar1.webp");
+const bar2 = blobUrl("mobile bar2.webp");
+const bar3 = blobUrl("mobile bar 3.webp");
+const bar4 = blobUrl("mobile bar 4.webp");
+const bar5 = blobUrl("mobile bar 5.webp");
+const bar6 = blobUrl("mobile bar 6.webp");
+const bar7 = blobUrl("mobile bar 7.webp");
+
+const corporateImage = blobUrl("mobile bar team.webp");
+const weddingImage = blobUrl("weddings.webp");
+const celebrationImage = blobUrl("image celebration.webp");
+const launchImage = blobUrl("EOSR0341.webp");
+const vipImage = blobUrl("groups.webp");
+const consultationImage = blobUrl("_MG_5385.webp");
 
 const services = [
   {

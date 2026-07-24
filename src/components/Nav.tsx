@@ -2,7 +2,9 @@ import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
-import logo from "../assets/logo-removebg-preview (1).png";
+import { blobUrl } from "../lib/blob";
+
+const logo = blobUrl("logo-removebg-preview (1).webp");
 
 const links = [
   { to: "/", label: "Home" },

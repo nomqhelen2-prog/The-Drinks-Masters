@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 
-import founderImage from "../assets/Founder.jpeg";
-import teamImage from "../assets/TDMTeam.jpeg";
+import { blobUrl } from "../lib/blob";
+
+const founderImage = blobUrl("Founder.webp");
+const teamImage = blobUrl("TDMTeam.webp");
 
 const reasons = [
   "Luxury focused service",

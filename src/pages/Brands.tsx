@@ -1,19 +1,21 @@
 import { useEffect } from "react";
 import { Globe2 } from "lucide-react";
 
-import logo from "../assets/logo-removebg-preview (1).png";
-import rolexLogo from "../assets/images-removebg-preview.png";
-import patekLogo from "../assets/patek_phillioe-removebg-preview.png";
-import audiLogo from "../assets/audi-removebg-preview.png";
-import amiriLogo from "../assets/amiri-removebg-preview.png";
-import diorLogo from "../assets/dior-removebg-preview.png";
-import radoLogo from "../assets/rado-removebg-preview.png";
-import martellLogo from "../assets/martell-removebg-preview.png";
-import belairLogo from "../assets/belair-removebg-preview.png";
-import narsLogo from "../assets/nars-removebg-preview.png";
-import nyxLogo from "../assets/nyx-removebg-preview.png";
-import theOrdinaryLogo from "../assets/the_ordinary-removebg-preview.png";
-import luxxVenueLogo from "../assets/luxx_venue-removebg-preview.png";
+import { blobUrl } from "../lib/blob";
+
+const logo = blobUrl("logo-removebg-preview (1).webp");
+const rolexLogo = blobUrl("images-removebg-preview.webp");
+const patekLogo = blobUrl("patek_phillioe-removebg-preview.webp");
+const audiLogo = blobUrl("audi-removebg-preview.webp");
+const amiriLogo = blobUrl("amiri-removebg-preview.webp");
+const diorLogo = blobUrl("dior-removebg-preview.webp");
+const radoLogo = blobUrl("rado-removebg-preview.webp");
+const martellLogo = blobUrl("martell-removebg-preview.webp");
+const belairLogo = blobUrl("belair-removebg-preview.webp");
+const narsLogo = blobUrl("nars-removebg-preview.webp");
+const nyxLogo = blobUrl("nyx-removebg-preview.webp");
+const theOrdinaryLogo = blobUrl("the_ordinary-removebg-preview.webp");
+const luxxVenueLogo = blobUrl("luxx_venue-removebg-preview.webp");
 
 const brands = [
   { name: "Rolex", logo: rolexLogo },
