@@ -23,6 +23,7 @@ export function Footer() {
               src={logo}
               alt="The Drinks Masters"
               className="h-24 w-auto brightness-0 invert drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]"
+              loading="lazy"
             />
           </Link>
           <p className="text-muted-foreground max-w-xs leading-relaxed">

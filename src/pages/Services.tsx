@@ -100,6 +100,7 @@ function GalleryCard({ item, className }: { item: (typeof gallery)[number]; clas
         src={item.src}
         alt={item.alt}
         className={`absolute inset-0 w-full h-full object-cover ${item.objectPosition ?? ""}`}
+        loading="lazy"
       />
     </div>
   );
@@ -162,6 +163,7 @@ export default function Services() {
                     src={s.image}
                     alt={s.title}
                     className={`w-full ${s.aspect ?? "aspect-[4/3]"} object-cover ${s.objectPosition ?? ""} group-hover:scale-105 transition-transform duration-500`}
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="display text-2xl mb-3">{s.title}</h3>
@@ -188,6 +190,7 @@ export default function Services() {
                   src={e.image}
                   alt={e.title}
                   className={`w-full aspect-[4/3] object-cover ${e.objectPosition ?? ""} group-hover:scale-105 transition-transform duration-500`}
+                  loading="lazy"
                 />
               </div>
               <h3 className="display text-2xl mb-3">{e.title}</h3>

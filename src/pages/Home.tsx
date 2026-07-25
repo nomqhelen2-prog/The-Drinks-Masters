@@ -93,6 +93,7 @@ export default function Home() {
           src={ladiesImage}
           alt="Guests enjoying a Drinks Masters activation"
           className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
+          loading="lazy"
         />
         <div className="container-x relative z-10">
           <p className="text-xs uppercase tracking-[0.4em] text-cream mb-4">Our Impact</p>
@@ -145,6 +146,7 @@ export default function Home() {
               src={mixingImage}
               alt="A Drinks Masters bartender mixing a cocktail"
               className="absolute inset-0 w-full h-full object-cover md:[clip-path:polygon(12%_0,100%_0,100%_100%,0_100%)]"
+              loading="lazy"
             />
           </div>
         </div>

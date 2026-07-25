@@ -106,6 +106,7 @@ export default function Contact() {
               src={contactImage}
               alt="A Drinks Masters bartender ready to serve"
               className="w-full aspect-[4/5] object-cover"
+              loading="lazy"
             />
           </div>
         </div>

@@ -54,7 +54,12 @@ export default function Brands() {
               key={b.name}
               className="bg-white aspect-[3/2] rounded-xl flex items-center justify-center p-6 hover:scale-[1.03] transition-transform"
             >
-              <img src={b.logo} alt={`${b.name} logo`} className="max-w-full max-h-full object-contain" />
+              <img
+                src={b.logo}
+                alt={`${b.name} logo`}
+                className="max-w-full max-h-full object-contain"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
@@ -67,6 +72,7 @@ export default function Brands() {
               src={logo}
               alt="The Drinks Masters"
               className="h-28 w-auto brightness-0 invert"
+              loading="lazy"
             />
             <Globe2 className="w-6 h-6 text-cream mb-1" strokeWidth={1.5} />
           </div>

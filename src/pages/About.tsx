@@ -29,6 +29,7 @@ export default function About() {
               src={founderImage}
               alt="Justice Adams, Founder of The Drinks Masters"
               className="w-full aspect-[3/4] object-cover rounded-2xl"
+              loading="lazy"
             />
           </div>
           <div className="md:col-span-7 md:col-start-6 space-y-6 text-lg text-muted-foreground leading-relaxed">
@@ -88,6 +89,7 @@ export default function About() {
           src={teamImage}
           alt="The Drinks Masters team behind the bar"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/25 to-transparent" />
         <div className="container-x relative z-10 pt-16 pb-6 md:pb-8 text-center max-w-3xl mx-auto">
