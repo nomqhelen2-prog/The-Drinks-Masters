@@ -1,10 +1,14 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import { useSEO } from "../lib/seo";
+
 export default function NotFound() {
-  useEffect(() => {
-    document.title = "Page not found — The Drinks Masters";
-  }, []);
+  useSEO({
+    title: "Page not found",
+    description: "The page you're looking for doesn't exist or has been moved.",
+    path: "/404",
+    noindex: true,
+  });
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">

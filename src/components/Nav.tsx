@@ -1,8 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
 
 import { blobUrl } from "../lib/blob";
+import { useContactModal } from "../context/ContactModalContext";
 
 const logo = blobUrl("logo-removebg-preview (1).webp");
 
@@ -16,6 +18,7 @@ const links = [
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const { openContactModal } = useContactModal();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/40 border-b border-border/40">
@@ -43,12 +46,13 @@ export function Nav() {
           ))}
         </nav>
 
-        <Link
-          to="/contact"
-          className="hidden md:inline-flex items-center justify-center bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold hover:opacity-90 transition"
+        <button
+          type="button"
+          onClick={openContactModal}
+          className="hidden md:inline-flex items-center justify-center bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold hover:opacity-90 hover:scale-105 active:scale-95 transition"
         >
           Connect With Us
-        </Link>
+        </button>
 
         {/* Mobile hamburger */}
         <button
@@ -60,21 +64,36 @@ export function Nav() {
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
-        {/* Mobile menu overlay */}
-        {open && (
-          <div className="md:hidden fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex flex-col items-center justify-center gap-8">
-            {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className="text-2xl uppercase tracking-widest text-foreground hover:text-cream transition-colors"
+        {/* Mobile menu overlay — portaled to <body> so it isn't trapped inside
+            the header's backdrop-blur containing block (fixed positioning
+            inside a backdrop-filter ancestor is scoped to that ancestor,
+            not the viewport). */}
+        {open &&
+          createPortal(
+            <div className="md:hidden fixed inset-0 z-[60] bg-background/95 backdrop-blur-sm flex flex-col items-center justify-center gap-8">
+              {links.map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  onClick={() => setOpen(false)}
+                  className="text-2xl uppercase tracking-widest text-foreground hover:text-cream transition-colors"
+                >
+                  {l.label}
+                </Link>
+              ))}
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  openContactModal();
+                }}
+                className="mt-4 inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm uppercase tracking-widest font-bold hover:opacity-90 hover:scale-105 active:scale-95 transition"
               >
-                {l.label}
-              </Link>
-            ))}
-          </div>
-        )}
+                Connect With Us
+              </button>
+            </div>,
+            document.body,
+          )}
       </div>
     </header>
   );

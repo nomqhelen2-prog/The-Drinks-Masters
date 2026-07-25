@@ -1,8 +1,9 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
 import { blobUrl } from "../lib/blob";
+import { useContactModal } from "../context/ContactModalContext";
+import { useSEO } from "../lib/seo";
 
 const ladiesImage = blobUrl("image ladies.webp");
 const mixingImage = blobUrl("mixing.webp");
@@ -34,9 +35,15 @@ const stats = [
 ];
 
 export default function Home() {
-  useEffect(() => {
-    document.title = "The Drinks Masters — Luxury Mobile Bar Experiences";
-  }, []);
+  const { openContactModal } = useContactModal();
+
+  useSEO({
+    title: "Luxury Mobile Bar Experiences",
+    description:
+      "Africa's leading luxury mobile bar company. Signature cocktails, premium coffee bars, and bespoke beverage activations for weddings, corporate events, and brand launches.",
+    path: "/",
+    isHome: true,
+  });
 
   return (
     <>
@@ -72,16 +79,17 @@ export default function Home() {
           and bespoke beverage activations executed with excellence.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Link
-            to="/contact"
-            className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm uppercase tracking-widest font-semibold hover:opacity-90 transition"
+          <button
+            type="button"
+            onClick={openContactModal}
+            className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm uppercase tracking-widest font-semibold hover:opacity-90 hover:scale-105 active:scale-95 transition"
           >
             Book an Experience
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
-          </Link>
+          </button>
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 border border-border px-6 py-3 rounded-full text-sm uppercase tracking-widest text-foreground hover:border-primary hover:text-cream transition"
+            className="inline-flex items-center gap-2 border border-border px-6 py-3 rounded-full text-sm uppercase tracking-widest text-foreground hover:border-primary hover:text-cream hover:scale-105 active:scale-95 transition"
           >
             Explore Services
           </Link>
@@ -92,29 +100,32 @@ export default function Home() {
         <img
           src={ladiesImage}
           alt="Guests enjoying a Drinks Masters activation"
-          className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
+          className="absolute inset-0 w-full h-full object-cover object-[center_15%] transition-transform duration-500 hover:scale-110"
           loading="lazy"
         />
+        {/* Fades the photo into the background color before its lower portion
+            (out of frame for this section) would otherwise show. */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-background pointer-events-none" />
         <div className="container-x relative z-10">
           <p className="text-xs uppercase tracking-[0.4em] text-cream mb-4">Our Impact</p>
           <h2 className="display text-4xl md:text-6xl max-w-2xl mb-16">
             Numbers that reflect our craft.
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-56 md:mt-72">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-24 md:mt-72">
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="p-8 border border-cream/20 rounded-2xl bg-background/50 backdrop-blur-sm"
+                className="p-5 sm:p-6 md:p-8 border border-cream/20 rounded-2xl bg-background/50 backdrop-blur-sm"
               >
-                <div className="display text-5xl text-cream mb-6">{s.n}</div>
-                <div className="text-lg font-semibold mb-2">{s.label}</div>
+                <div className="display text-3xl sm:text-4xl md:text-5xl text-cream mb-3 md:mb-6">{s.n}</div>
+                <div className="text-base md:text-lg font-semibold mb-2">{s.label}</div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
           <Link
             to="/about"
-            className="inline-flex items-center gap-2 mt-12 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm uppercase tracking-widest font-semibold hover:opacity-90 transition"
+            className="inline-flex items-center gap-2 mt-12 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm uppercase tracking-widest font-semibold hover:opacity-90 hover:scale-105 active:scale-95 transition"
           >
             Learn More About Us
           </Link>
@@ -133,19 +144,20 @@ export default function Home() {
               our dedicated team is here to help with menus, pricing, or anything in between.
               Reach out today and we'll make sure you get the guidance you need, promptly.
             </p>
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-2 self-start rounded-full border border-cream/40 px-6 py-3 text-sm uppercase tracking-widest text-cream hover:bg-cream hover:text-background transition"
+            <button
+              type="button"
+              onClick={openContactModal}
+              className="group inline-flex items-center gap-2 self-start rounded-full border border-cream/40 px-6 py-3 text-sm uppercase tracking-widest text-cream hover:bg-cream hover:text-background hover:scale-105 active:scale-95 transition"
             >
               Contact Us
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
-            </Link>
+            </button>
           </div>
           <div className="relative min-h-[320px] md:min-h-0">
             <img
               src={mixingImage}
               alt="A Drinks Masters bartender mixing a cocktail"
-              className="absolute inset-0 w-full h-full object-cover md:[clip-path:polygon(12%_0,100%_0,100%_100%,0_100%)]"
+              className="absolute inset-0 w-full h-full object-cover md:[clip-path:polygon(12%_0,100%_0,100%_100%,0_100%)] transition-transform duration-500 hover:scale-110"
               loading="lazy"
             />
           </div>

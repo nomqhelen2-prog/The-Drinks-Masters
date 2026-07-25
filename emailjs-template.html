@@ -1,0 +1,51 @@
+<!--
+  EmailJS template for The Drinks Masters contact form.
+
+  Setup in EmailJS dashboard:
+  1. Email Templates → Create New Template
+  2. Subject:  New Enquiry from {{from_name}} {{from_surname}} — The Drinks Masters
+  3. To Email:    justice@thedrinksmasterssa.com
+  4. Reply To:    {{reply_to}}
+  5. Content tab → switch to "Code" view → paste everything below
+  6. Save, then copy the Template ID into VITE_EMAILJS_TEMPLATE_ID
+-->
+<div style="font-family: Arial, Helvetica, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; color: #1a1a1a;">
+  <div style="background: #0f0a08; padding: 24px 32px;">
+    <h1 style="color: #f5e8d8; font-size: 20px; margin: 0; letter-spacing: 1px; text-transform: uppercase;">
+      The Drinks Masters
+    </h1>
+    <p style="color: #c9b8a8; font-size: 13px; margin: 4px 0 0;">New website enquiry</p>
+  </div>
+
+  <div style="padding: 32px;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+      <tr>
+        <td style="padding: 10px 0; border-bottom: 1px solid #eee; width: 140px; color: #777;">Name</td>
+        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">{{from_name}} {{from_surname}}</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #777;">Mobile Number</td>
+        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">{{phone}}</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #777;">Email Address</td>
+        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">{{reply_to}}</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #777;">Service</td>
+        <td style="padding: 10px 0; border-bottom: 1px solid #eee;">{{service}}</td>
+      </tr>
+    </table>
+
+    <p style="margin: 24px 0 8px; color: #777; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">
+      Message
+    </p>
+    <p style="margin: 0; font-size: 14px; line-height: 1.6; white-space: pre-wrap; background: #faf8f5; border: 1px solid #eee; border-radius: 8px; padding: 16px;">
+      {{message}}
+    </p>
+
+    <p style="margin-top: 32px; font-size: 12px; color: #999;">
+      Sent from the enquiry form at thedrinksmasterssa.com
+    </p>
+  </div>
+</div>

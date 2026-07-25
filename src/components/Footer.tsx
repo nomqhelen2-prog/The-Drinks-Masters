@@ -51,22 +51,22 @@ export function Footer() {
           <h4 className="text-xs uppercase tracking-[0.3em] text-cream mb-6">Contact</h4>
           <div className="flex flex-col gap-4">
             <a
-              href="https://wa.me/27601064358"
+              href="https://wa.me/27742483738"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-muted-foreground hover:text-cream transition-colors"
             >
               <FaWhatsapp className="w-5 h-5 text-cream shrink-0" />
-              +27 60 106 4358
+              +27 74 248 3738
             </a>
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@thedrinksmasters.co.za&su=Enquiry%20—%20The%20Drinks%20Masters"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=justice@thedrinksmasterssa.com&su=Enquiry%20—%20The%20Drinks%20Masters"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-muted-foreground hover:text-cream transition-colors"
             >
               <FaEnvelope className="w-5 h-5 text-cream shrink-0" />
-              info@thedrinksmasters.co.za
+              justice@thedrinksmasterssa.com
             </a>
             <a
               href="https://instagram.com/thedrinksmasters"

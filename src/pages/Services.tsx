@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-
 import { blobUrl } from "../lib/blob";
+import { useSEO } from "../lib/seo";
 
 const mobileBarImage = blobUrl("mobile bar1.webp");
 const cocktailImage = blobUrl("signature cocktails.webp");
@@ -141,9 +140,12 @@ const eventTypes = [
 ];
 
 export default function Services() {
-  useEffect(() => {
-    document.title = "Services — The Drinks Masters";
-  }, []);
+  useSEO({
+    title: "Services",
+    description:
+      "Luxury mobile bars, signature cocktail experiences, premium coffee bars, and brand activations — bespoke beverage services for weddings, corporate events, and product launches.",
+    path: "/services",
+  });
 
   return (
     <>

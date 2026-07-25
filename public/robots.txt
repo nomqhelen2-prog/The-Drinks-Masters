@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://the-drinks-masters.vercel.app/sitemap.xml

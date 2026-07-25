@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import { Globe2 } from "lucide-react";
 
 import { blobUrl } from "../lib/blob";
+import { useSEO } from "../lib/seo";
 
 const logo = blobUrl("logo-removebg-preview (1).webp");
 const rolexLogo = blobUrl("images-removebg-preview.webp");
@@ -33,9 +33,12 @@ const brands = [
 ];
 
 export default function Brands() {
-  useEffect(() => {
-    document.title = "Brands — The Drinks Masters";
-  }, []);
+  useSEO({
+    title: "Brands",
+    description:
+      "Trusted by Rolex, Patek Philippe, Audi, Amiri, Dior, Rado, Martell, NARS, NYX, The Ordinary and more — The Drinks Masters delivers luxury beverage experiences for the world's most refined brands.",
+    path: "/brands",
+  });
 
   return (
     <>

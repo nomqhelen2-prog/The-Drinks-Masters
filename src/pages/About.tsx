@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-
 import { blobUrl } from "../lib/blob";
+import { useSEO } from "../lib/seo";
 
 const founderImage = blobUrl("Founder.webp");
 const teamImage = blobUrl("TDMTeam.webp");
@@ -16,19 +15,22 @@ const reasons = [
 ];
 
 export default function About() {
-  useEffect(() => {
-    document.title = "About — The Drinks Masters";
-  }, []);
+  useSEO({
+    title: "About",
+    description:
+      "Meet The Drinks Masters — Africa's luxury mobile bar company delivering elegant bar designs, bespoke cocktails, and professional event management across South Africa and beyond.",
+    path: "/about",
+  });
 
   return (
     <>
       <section className="pt-32 pb-24 md:pb-32 container-x">
         <div className="grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 overflow-hidden rounded-2xl">
             <img
               src={founderImage}
               alt="Justice Adams, Founder of The Drinks Masters"
-              className="w-full aspect-[3/4] object-cover rounded-2xl"
+              className="w-full aspect-[3/4] object-cover transition-transform duration-500 hover:scale-110"
               loading="lazy"
             />
           </div>
@@ -88,7 +90,7 @@ export default function About() {
         <img
           src={teamImage}
           alt="The Drinks Masters team behind the bar"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/25 to-transparent" />
