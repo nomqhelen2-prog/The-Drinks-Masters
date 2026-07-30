@@ -37,13 +37,17 @@ export default function About() {
           <div className="md:col-span-7 md:col-start-6 space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
               The Drinks Masters is one of Africa's leading luxury mobile bar and beverage
-              experience companies, specializing in premium cocktail bars, coffee bars and
-              bespoke beverage activations for world-class events.
+              experience companies, <strong className="text-foreground font-semibold">specialising</strong> in
+              premium cocktail bars, coffee bars and bespoke beverage activations for world-class
+              events.
             </p>
-            <p>
-              Founded by Justice Adams, our vision is to create unforgettable experiences
-              through exceptional service, world-class mixology and elegant event execution 
-              from intimate weddings to global brand launches.
+            <p className="flex gap-3">
+              <span className="text-cream" aria-hidden>•</span>
+              <span>
+                Led by Justice Adams, our vision is to create unforgettable experiences through
+                exceptional service, world-class mixology and elegant event execution from intimate
+                weddings to global brand launches.
+              </span>
             </p>
             <p>
               Our work extends beyond South Africa. From Johannesburg to Tanzania, The Drinks
@@ -77,12 +81,19 @@ export default function About() {
 
       <section className="py-24 md:py-32 container-x">
         <h2 className="display text-4xl md:text-5xl mb-16">Built for excellence, every time.</h2>
-        <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
-          {reasons.map((r) => (
-            <div key={r}>
-              <span className="text-foreground font-semibold text-lg">{r}</span>
-            </div>
-          ))}
+        <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+          {reasons.map((r) => {
+            const [firstWord, ...restWords] = r.split(" ");
+            const rest = restWords.join(" ");
+            return (
+              <div key={r}>
+                <span className="display text-2xl md:text-3xl text-foreground tracking-wide">
+                  <em className="italic">{firstWord}</em>
+                  {rest ? ` ${rest}` : ""}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </section>
 

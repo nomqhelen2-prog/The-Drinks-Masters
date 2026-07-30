@@ -18,19 +18,14 @@ const stats = [
     desc: "From intimate weddings to global brand activations, every event is executed with precision and care.",
   },
   {
-    n: "12",
+    n: "24",
     label: "Luxury Brands",
     desc: "Trusted by the world's most refined names to deliver beverage experiences that match their standards.",
   },
   {
-    n: "5",
+    n: "7",
     label: "Regions Served",
-    desc: "Delivering premium mobile bar experiences across Johannesburg, Cape Town, Durban, Eswatini and beyond.",
-  },
-  {
-    n: "4.6k",
-    label: "Community",
-    desc: "A growing community of clients and guests who keep coming back for the experience.",
+    desc: "Delivering premium mobile bar experiences across Johannesburg, Cape Town, Durban, Eswatini, Tanzania, Mozambique and beyond.",
   },
 ];
 
@@ -111,7 +106,7 @@ export default function Home() {
           <h2 className="display text-4xl md:text-6xl max-w-2xl mb-16">
             Numbers that reflect our craft.
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-24 md:mt-72">
+          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mt-12 sm:mt-24 md:mt-72">
             {stats.map((s) => (
               <div
                 key={s.label}

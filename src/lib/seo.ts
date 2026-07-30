@@ -5,7 +5,7 @@ import { blobUrl } from "./blob";
 // TODO: confirm this matches the exact domain connected in your Vercel project
 // settings (Settings → Domains). Update this one constant if it's different —
 // everything below (sitemap, robots.txt, canonical/OG tags) reads from it.
-export const SITE_URL = "https://the-drinks-masters.vercel.app";
+export const SITE_URL = "https://thedrinksmasters.vercel.app";
 
 export const SITE_NAME = "The Drinks Masters";
 

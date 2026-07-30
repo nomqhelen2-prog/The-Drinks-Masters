@@ -16,6 +16,18 @@ const narsLogo = blobUrl("nars-removebg-preview.webp");
 const nyxLogo = blobUrl("nyx-removebg-preview.webp");
 const theOrdinaryLogo = blobUrl("the_ordinary-removebg-preview.webp");
 const luxxVenueLogo = blobUrl("luxx_venue-removebg-preview.webp");
+const superSportLogo = blobUrl("supersport-removebg-preview.webp");
+const woolworthsLogo = blobUrl("woolworths-removebg-preview.webp");
+const skinsLogo = blobUrl("skins-removebg-preview.webp");
+const kylieLogo = blobUrl("kylie-removebg-preview.webp");
+const lileLogo = blobUrl("lile-removebg-preview.webp");
+const casablancaLogo = blobUrl("casablanca-removebg-preview.webp");
+const bathuLogo = blobUrl("bathu-removebg-preview.webp");
+const bigBrotherLogo = blobUrl("big_brother-removebg-preview.webp");
+const axeLogo = blobUrl("axe-removebg-preview.webp");
+const eggLogo = blobUrl("egg-removebg-preview.webp");
+const glamourLogo = blobUrl("glamour-removebg-preview.webp");
+const netflixLogo = blobUrl("netflix-removebg-preview.webp");
 
 const brands = [
   { name: "Rolex", logo: rolexLogo },
@@ -30,13 +42,25 @@ const brands = [
   { name: "NYX", logo: nyxLogo },
   { name: "The Ordinary", logo: theOrdinaryLogo },
   { name: "Luxx Venue", logo: luxxVenueLogo },
+  { name: "SuperSport", logo: superSportLogo },
+  { name: "Woolworths", logo: woolworthsLogo },
+  { name: "Skins", logo: skinsLogo },
+  { name: "Kylie Cosmetics", logo: kylieLogo },
+  { name: "Lile", logo: lileLogo },
+  { name: "Casablanca", logo: casablancaLogo },
+  { name: "Bathu", logo: bathuLogo },
+  { name: "Big Brother Mzansi", logo: bigBrotherLogo },
+  { name: "Axe", logo: axeLogo },
+  { name: "Egg", logo: eggLogo },
+  { name: "Glamour", logo: glamourLogo },
+  { name: "Netflix", logo: netflixLogo },
 ];
 
 export default function Brands() {
   useSEO({
     title: "Brands",
     description:
-      "Trusted by Rolex, Patek Philippe, Audi, Amiri, Dior, Rado, Martell, NARS, NYX, The Ordinary and more — The Drinks Masters delivers luxury beverage experiences for the world's most refined brands.",
+      "Trusted by Rolex, Patek Philippe, Audi, Amiri, Dior, Woolworths, Netflix, SuperSport, Kylie Cosmetics and more — The Drinks Masters delivers luxury beverage experiences for the world's most refined brands.",
     path: "/brands",
   });
 
@@ -49,7 +73,8 @@ export default function Brands() {
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
           We've proudly delivered exceptional experiences for brands including Rolex, Patek
           Philippe, Audi, Amiri, Dior, Rado, Martell, Belair, NARS, NYX Professional Makeup,
-          The Ordinary and Luxx Venue.
+          The Ordinary, Luxx Venue, SuperSport, Woolworths, Skins, Kylie Cosmetics, Lile,
+          Casablanca, Bathu, Big Brother Mzansi, Axe, Egg, Glamour and Netflix.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {brands.map((b) => (
