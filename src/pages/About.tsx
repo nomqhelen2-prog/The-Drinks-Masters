@@ -97,21 +97,44 @@ export default function About() {
         </div>
       </section>
 
-      <section className="relative aspect-[1280/682] flex items-end overflow-hidden">
-        <img
-          src={teamImage}
-          alt="The Drinks Masters team behind the bar"
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/25 to-transparent" />
-        <div className="container-x relative z-10 pt-16 pb-6 md:pb-8 text-center max-w-3xl mx-auto">
-          <p className="display text-3xl md:text-5xl leading-tight text-cream">
-            We don't simply serve drinks. We craft experiences.
-          </p>
-          <p className="mt-8 text-lg text-muted-foreground">
-            Every cocktail. Every coffee. Every interaction. Every event. Executed with excellence.
-          </p>
+      <section className="border-t border-border">
+        {/* Mobile only: full, uncropped image with caption below (not overlaid) */}
+        <div className="block md:hidden">
+          <div className="overflow-hidden bg-black">
+            <img
+              src={teamImage}
+              alt="The Drinks Masters team behind the bar"
+              className="w-full h-auto max-h-[80vh] object-contain mx-auto"
+              loading="lazy"
+            />
+          </div>
+          <div className="container-x py-16 text-center max-w-3xl mx-auto">
+            <p className="display text-3xl leading-tight text-cream">
+              We don't simply serve drinks. We craft experiences.
+            </p>
+            <p className="mt-8 text-lg text-muted-foreground">
+              Every cocktail. Every coffee. Every interaction. Every event. Executed with excellence.
+            </p>
+          </div>
+        </div>
+
+        {/* Desktop/tablet: original overlay design, unchanged */}
+        <div className="hidden md:flex relative aspect-[1280/682] items-end overflow-hidden">
+          <img
+            src={teamImage}
+            alt="The Drinks Masters team behind the bar"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/25 to-transparent" />
+          <div className="container-x relative z-10 pt-16 pb-6 md:pb-8 text-center max-w-3xl mx-auto">
+            <p className="display text-3xl md:text-5xl leading-tight text-cream">
+              We don't simply serve drinks. We craft experiences.
+            </p>
+            <p className="mt-8 text-lg text-muted-foreground">
+              Every cocktail. Every coffee. Every interaction. Every event. Executed with excellence.
+            </p>
+          </div>
         </div>
       </section>
     </>

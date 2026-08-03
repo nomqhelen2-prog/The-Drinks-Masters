@@ -7,6 +7,8 @@ export type SlideshowItem = {
   title: string;
   desc: string;
   objectPosition?: string;
+  /** Override the default responsive width classes for this slide's image. */
+  widthClassName?: string;
 };
 
 const AUTOPLAY_MS = 3000;
@@ -85,17 +87,13 @@ export function ActivationSlideshow({ items }: { items: SlideshowItem[] }) {
                 key={i === activeIndex ? cycle : "static"}
                 src={item.src}
                 alt={item.alt}
-                className={`block mx-auto w-[80%] sm:w-[70%] h-auto rounded-lg ${
+                className={`block mx-auto ${item.widthClassName ?? "w-[80%] sm:w-[70%]"} h-auto rounded-lg ${
                   i === activeIndex ? "activation-slide-in" : ""
                 }`}
                 loading={i === 0 ? "eager" : "lazy"}
               />
             </div>
           ))}
-        </div>
-
-        <div className="absolute top-4 right-4 md:top-6 md:right-6 font-mono text-xs tracking-[0.3em] text-cream/70">
-          {String(activeIndex + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
         </div>
 
         {/* Prev / Next — scoped to the image area, not the caption below */}

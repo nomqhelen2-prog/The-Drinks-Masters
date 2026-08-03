@@ -52,6 +52,7 @@ const gallery = [
     title: "Luxury Brand Activations",
     desc: "From Amiri to the world's most exclusive names, we bring elevated bar experiences to brand launches.",
     objectPosition: "object-[center_65%]",
+    widthClassName: "w-full sm:w-[70%]",
   },
   {
     src: bar2,
