@@ -1,7 +1,7 @@
 import { blobUrl } from "../lib/blob";
 import { useSEO } from "../lib/seo";
 
-const founderImage = blobUrl("Founder.webp");
+const founderImage = blobUrl("Founder.webp", 2);
 const teamImage = blobUrl("mobile bar team.webp");
 
 const reasons = [
