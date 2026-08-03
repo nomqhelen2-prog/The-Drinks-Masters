@@ -2,7 +2,7 @@ import { blobUrl } from "../lib/blob";
 import { useSEO } from "../lib/seo";
 
 const founderImage = blobUrl("Founder.webp");
-const teamImage = blobUrl("TDMTeam.webp");
+const teamImage = blobUrl("mobile bar team.webp");
 
 const reasons = [
   "Luxury focused service",
@@ -87,7 +87,7 @@ export default function About() {
             const rest = restWords.join(" ");
             return (
               <div key={r}>
-                <span className="display text-2xl md:text-3xl text-foreground tracking-wide">
+                <span className="text-foreground font-semibold text-lg">
                   <em className="italic">{firstWord}</em>
                   {rest ? ` ${rest}` : ""}
                 </span>

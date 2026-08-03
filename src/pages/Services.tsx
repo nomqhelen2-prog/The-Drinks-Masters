@@ -1,5 +1,6 @@
 import { blobUrl } from "../lib/blob";
 import { useSEO } from "../lib/seo";
+import { ActivationSlideshow } from "../components/ActivationSlideshow";
 
 const mobileBarImage = blobUrl("mobile bar1.webp");
 const cocktailImage = blobUrl("signature cocktails.webp");
@@ -8,13 +9,12 @@ const brandActivationImage = blobUrl("luxury brand activations.webp");
 
 const bar1 = blobUrl("mobile bar1.webp");
 const bar2 = blobUrl("mobile bar2.webp");
-const bar3 = blobUrl("mobile bar 3.webp");
 const bar4 = blobUrl("mobile bar 4.webp");
 const bar5 = blobUrl("mobile bar 5.webp");
 const bar6 = blobUrl("mobile bar 6.webp");
 const bar7 = blobUrl("mobile bar 7.webp");
 
-const corporateImage = blobUrl("mobile bar team.webp");
+const corporateImage = blobUrl("EOSR9899.jpg");
 const weddingImage = blobUrl("weddings.webp");
 const celebrationImage = blobUrl("image celebration.webp");
 const launchImage = blobUrl("EOSR0341.webp");
@@ -51,6 +51,7 @@ const gallery = [
     alt: "The Drinks Masters mobile bar at the Amiri activation",
     title: "Luxury Brand Activations",
     desc: "From Amiri to the world's most exclusive names, we bring elevated bar experiences to brand launches.",
+    objectPosition: "object-[center_65%]",
   },
   {
     src: bar2,
@@ -58,12 +59,6 @@ const gallery = [
     title: "Corporate Launches",
     desc: "Signature service for product reveals and corporate milestones.",
     objectPosition: "object-[center_55%]",
-  },
-  {
-    src: bar3,
-    alt: "The Drinks Masters bar at Melcapo's Padel Club",
-    title: "Private Clubs & Venues",
-    desc: "Bespoke bar setups for clubs, lounges and members-only spaces.",
   },
   {
     src: bar4,
@@ -92,25 +87,13 @@ const gallery = [
   },
 ];
 
-function GalleryCard({ item, className }: { item: (typeof gallery)[number]; className: string }) {
-  return (
-    <div className={`relative overflow-hidden rounded-2xl ${className}`}>
-      <img
-        src={item.src}
-        alt={item.alt}
-        className={`absolute inset-0 w-full h-full object-cover ${item.objectPosition ?? ""}`}
-        loading="lazy"
-      />
-    </div>
-  );
-}
 
 const eventTypes = [
   {
     image: corporateImage,
     title: "Corporate",
     desc: "Polished bar service and premium hospitality for conferences, product reveals and corporate milestones.",
-    objectPosition: "object-top",
+    objectPosition: "object-[center_50%]",
   },
   {
     image: weddingImage,
@@ -208,14 +191,8 @@ export default function Services() {
           <p className="text-xs uppercase tracking-[0.4em] text-cream mb-4">In Action</p>
           <h2 className="display text-4xl md:text-5xl">Behind every activation.</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
-          <GalleryCard item={gallery[0]} className="md:col-span-4 h-96 md:h-[40rem]" />
-          <GalleryCard item={gallery[1]} className="md:col-span-4 h-96 md:h-[40rem]" />
-          <GalleryCard item={gallery[2]} className="md:col-span-4 h-96 md:h-[40rem]" />
-          <GalleryCard item={gallery[3]} className="md:col-span-6 h-80 md:h-[28rem]" />
-          <GalleryCard item={gallery[4]} className="md:col-span-6 h-80 md:h-[28rem]" />
-          <GalleryCard item={gallery[5]} className="md:col-span-6 h-96 md:h-[38rem]" />
-          <GalleryCard item={gallery[6]} className="md:col-span-6 h-96 md:h-[38rem]" />
+        <div className="max-w-2xl mx-auto">
+          <ActivationSlideshow items={gallery} />
         </div>
       </section>
     </>

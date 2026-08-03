@@ -6,14 +6,14 @@ import { useContactModal } from "../context/ContactModalContext";
 import { useSEO } from "../lib/seo";
 
 const ladiesImage = blobUrl("image ladies.webp");
-const mixingImage = blobUrl("mixing.webp");
+const mixingImage = blobUrl("drinks.webp");
 
 const STORY_IMAGE =
   "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1200&q=80";
 
 const stats = [
   {
-    n: "128+",
+    n: "500+",
     label: "Events Crafted",
     desc: "From intimate weddings to global brand activations, every event is executed with precision and care.",
   },
@@ -55,9 +55,8 @@ export default function Home() {
           playsInline
           poster={STORY_IMAGE}
         >
-          <source src="/videos/hero-tshepo.mp4" type="video/mp4" />
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-background" />
       </section>
 
 <section className="pt-24 pb-16 md:pt-32 md:pb-20 container-x flex flex-col items-center text-center">

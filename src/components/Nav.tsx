@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
 
@@ -16,12 +16,51 @@ const links = [
   { to: "/contact", label: "Contact" },
 ];
 
+const REVEAL_ZONE_PX = 60; // how close the cursor must get to the top edge to peek the nav
+const HIDE_AFTER_PX = 96; // don't start hiding until scrolled past the header's own height
+
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const { openContactModal } = useContactModal();
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+
+    function onScroll() {
+      const y = window.scrollY;
+      const goingDown = y > lastScrollY.current;
+      lastScrollY.current = y;
+
+      if (y < HIDE_AFTER_PX) {
+        setHidden(false);
+        return;
+      }
+      setHidden(goingDown);
+    }
+
+    function onMouseMove(e: MouseEvent) {
+      if (e.clientY <= REVEAL_ZONE_PX) setHidden(false);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("mousemove", onMouseMove);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("mousemove", onMouseMove);
+    };
+  }, []);
+
+  // Never hide while the mobile menu is open, or the hamburger would vanish mid-interaction.
+  const translateHidden = hidden && !open;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/40 border-b border-border/40">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/40 border-b border-border/40 transition-transform duration-300 ${
+        translateHidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       <div className="container-x flex items-center justify-between h-24">
         <Link to="/" className="flex items-center">
           <img

@@ -132,7 +132,20 @@ export function ContactForm({
           maxLength={150}
         />
       </div>
-      <SelectField label="Service" name="service" options={serviceOptions} required />
+      <div className={`grid sm:grid-cols-2 ${gap}`}>
+        <Field label="Number of Pax" name="pax" type="number" placeholder="Enter number of guests" required maxLength={10} />
+        <Field label="Event Location" name="location" placeholder="Enter the event location" required maxLength={150} />
+      </div>
+      <div className={`grid sm:grid-cols-2 ${gap}`}>
+        <Field
+          label="Event Date & Time"
+          name="event_time"
+          placeholder="e.g. 14 Feb 2026, 18:00–23:00"
+          required
+          maxLength={100}
+        />
+        <SelectField label="Service" name="service" options={serviceOptions} required />
+      </div>
       <Field
         label="Messages"
         name="message"

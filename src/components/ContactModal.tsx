@@ -33,7 +33,7 @@ export function ContactModal() {
       aria-label="Connect with us"
     >
       <div
-        className="relative w-full max-w-md"
+        className="relative w-full max-w-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button

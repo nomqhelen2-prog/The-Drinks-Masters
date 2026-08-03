@@ -69,13 +69,13 @@ export function Footer() {
               justice@thedrinksmasterssa.com
             </a>
             <a
-              href="https://instagram.com/the_drinks_masters"
+              href="https://instagram.com/the_drinks_masters_"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-muted-foreground hover:text-cream transition-colors"
             >
               <FaInstagram className="w-5 h-5 text-cream shrink-0" />
-              @the_drinks_masters
+              @the_drinks_masters_
             </a>
           </div>
         </div>

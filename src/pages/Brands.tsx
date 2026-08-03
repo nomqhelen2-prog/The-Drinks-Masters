@@ -29,31 +29,33 @@ const eggLogo = blobUrl("egg-removebg-preview.webp");
 const glamourLogo = blobUrl("glamour-removebg-preview.webp");
 const netflixLogo = blobUrl("netflix-removebg-preview.webp");
 
-const brands = [
-  { name: "Rolex", logo: rolexLogo },
-  { name: "Patek Philippe", logo: patekLogo },
-  { name: "Audi", logo: audiLogo },
-  { name: "Amiri", logo: amiriLogo },
-  { name: "Dior", logo: diorLogo },
-  { name: "Rado", logo: radoLogo },
-  { name: "Martell", logo: martellLogo },
-  { name: "Belair", logo: belairLogo },
-  { name: "NARS", logo: narsLogo },
-  { name: "NYX", logo: nyxLogo },
-  { name: "The Ordinary", logo: theOrdinaryLogo },
-  { name: "Luxx Venue", logo: luxxVenueLogo },
-  { name: "SuperSport", logo: superSportLogo },
-  { name: "Woolworths", logo: woolworthsLogo },
-  { name: "Skins", logo: skinsLogo },
-  { name: "Kylie Cosmetics", logo: kylieLogo },
-  { name: "Lile", logo: lileLogo },
-  { name: "Casablanca", logo: casablancaLogo },
-  { name: "Bathu", logo: bathuLogo },
-  { name: "Big Brother Mzansi", logo: bigBrotherLogo },
-  { name: "Axe", logo: axeLogo },
-  { name: "Egg", logo: eggLogo },
-  { name: "Glamour", logo: glamourLogo },
-  { name: "Netflix", logo: netflixLogo },
+type Brand = { name: string; logo: string; dark?: boolean; website?: string };
+
+const brands: Brand[] = [
+  { name: "Rolex", logo: rolexLogo, website: "https://www.rolex.com" },
+  { name: "Patek Philippe", logo: patekLogo, website: "https://www.patek.com" },
+  { name: "Audi", logo: audiLogo, website: "https://www.audi.com" },
+  { name: "Amiri", logo: amiriLogo, website: "https://amiri.com" },
+  { name: "Dior", logo: diorLogo, website: "https://www.dior.com" },
+  { name: "Rado", logo: radoLogo, website: "https://www.rado.com" },
+  { name: "Martell", logo: martellLogo, website: "https://www.martell.com" },
+  { name: "Belair", logo: belairLogo, website: "https://belair.co.za" },
+  { name: "NARS", logo: narsLogo, website: "https://www.narscosmetics.com" },
+  { name: "NYX", logo: nyxLogo, website: "https://www.nyxcosmetics.com" },
+  { name: "The Ordinary", logo: theOrdinaryLogo, website: "https://theordinary.com" },
+  { name: "Luxx Venue", logo: luxxVenueLogo, website: "https://www.luxxvenue.co.za" },
+  { name: "SuperSport", logo: superSportLogo, website: "https://www.supersport.com" },
+  { name: "Woolworths", logo: woolworthsLogo, website: "https://www.woolworths.co.za" },
+  { name: "Skins", logo: skinsLogo, website: "https://skins.co.za/" },
+  { name: "Kylie Cosmetics", logo: kylieLogo, website: "https://kyliecosmetics.com" },
+  { name: "Lile", logo: lileLogo, website: "https://www.lilesandton.com" },
+  { name: "Casablanca", logo: casablancaLogo, website: "https://casablancaparis.com" },
+  { name: "Bathu", logo: bathuLogo, website: "https://bathu.co.za" },
+  { name: "Big Brother Mzansi", logo: bigBrotherLogo, website: "https://bigbrothermzansi.co.za" },
+  { name: "Axe", logo: axeLogo, website: "https://www.axe.com" },
+  { name: "Egg", logo: eggLogo, dark: true },
+  { name: "Glamour", logo: glamourLogo, website: "https://www.glamour.com" },
+  { name: "Netflix", logo: netflixLogo, website: "https://www.netflix.com" },
 ];
 
 export default function Brands() {
@@ -77,19 +79,53 @@ export default function Brands() {
           Casablanca, Bathu, Big Brother Mzansi, Axe, Egg, Glamour and Netflix.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          {brands.map((b) => (
-            <div
-              key={b.name}
-              className="bg-white aspect-[3/2] rounded-xl flex items-center justify-center p-6 hover:scale-[1.03] transition-transform"
-            >
+          {brands.map((b) => {
+            const logoEl = b.dark ? (
+              <div className="bg-neutral-900 rounded-md px-4 py-3 flex items-center justify-center max-w-full max-h-full">
+                <img
+                  src={b.logo}
+                  alt={`${b.name} logo`}
+                  className="max-w-full max-h-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
               <img
                 src={b.logo}
                 alt={`${b.name} logo`}
                 className="max-w-full max-h-full object-contain"
                 loading="lazy"
               />
-            </div>
-          ))}
+            );
+
+            return (
+              <div
+                key={b.name}
+                className="group relative aspect-[3/2] rounded-xl bg-white overflow-hidden hover:scale-[1.03] transition-transform"
+              >
+                {b.website ? (
+                  <a
+                    href={b.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${b.name}'s website`}
+                    className="absolute inset-0 flex items-center justify-center p-2.5"
+                  >
+                    {logoEl}
+                  </a>
+                ) : (
+                  <>
+                    <div className="absolute inset-0 flex items-center justify-center p-2.5">{logoEl}</div>
+                    <div className="absolute inset-0 flex items-center justify-center px-3 text-center bg-black/85 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <p className="text-white text-xs uppercase tracking-wide leading-relaxed">
+                        {b.name} doesn't have a website
+                      </p>
+                    </div>
+                  </>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 
