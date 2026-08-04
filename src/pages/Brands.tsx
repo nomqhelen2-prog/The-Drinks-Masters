@@ -28,6 +28,9 @@ const axeLogo = blobUrl("axe-removebg-preview.webp");
 const eggLogo = blobUrl("egg-removebg-preview.webp");
 const glamourLogo = blobUrl("glamour-removebg-preview.webp");
 const netflixLogo = blobUrl("netflix-removebg-preview.webp");
+const vickyCreaseLogo = blobUrl("vicky-crease-removebg-preview.webp");
+const amarulaLogo = blobUrl("amarula-removebg-preview.webp");
+const touchedByOctoberLogo = blobUrl("touched-by-october-removebg-preview.webp");
 
 type Brand = { name: string; logo: string; dark?: boolean; website?: string };
 
@@ -56,6 +59,9 @@ const brands: Brand[] = [
   { name: "Egg", logo: eggLogo, dark: true },
   { name: "Glamour", logo: glamourLogo, website: "https://www.glamour.com" },
   { name: "Netflix", logo: netflixLogo, website: "https://www.netflix.com" },
+  { name: "Vicky Crease Catering + Events", logo: vickyCreaseLogo },
+  { name: "Amarula", logo: amarulaLogo, website: "https://www.amarula.com" },
+  { name: "Touched By October", logo: touchedByOctoberLogo },
 ];
 
 export default function Brands() {
@@ -78,7 +84,7 @@ export default function Brands() {
           The Ordinary, Luxx Venue, SuperSport, Woolworths, Skins, Kylie Cosmetics, Lile,
           Casablanca, Bathu, Big Brother Mzansi, Axe, Egg, Glamour and Netflix.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {brands.map((b) => {
             const logoEl = b.dark ? (
               <div className="bg-neutral-900 rounded-md px-4 py-3 flex items-center justify-center max-w-full max-h-full">
@@ -101,7 +107,7 @@ export default function Brands() {
             return (
               <div
                 key={b.name}
-                className="group relative aspect-[3/2] rounded-xl bg-white overflow-hidden hover:scale-[1.03] transition-transform"
+                className="group relative aspect-[3/2] rounded-xl bg-white overflow-hidden hover:scale-[1.03] transition-transform w-[calc(50%-0.5rem)] md:w-[calc(25%-0.75rem)] lg:w-[calc(16.6667%-0.8334rem)]"
               >
                 {b.website ? (
                   <a
