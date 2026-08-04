@@ -52,7 +52,7 @@ export function useSEO({
   noindex?: boolean;
 }) {
   useEffect(() => {
-    const fullTitle = isHome ? `${SITE_NAME} — ${title}` : `${title} — ${SITE_NAME}`;
+    const fullTitle = isHome ? `${SITE_NAME} | ${title}` : `${title} — ${SITE_NAME}`;
     const url = `${SITE_URL}${path}`;
     const ogImage = image ?? DEFAULT_OG_IMAGE;
 

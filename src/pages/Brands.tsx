@@ -59,9 +59,9 @@ const brands: Brand[] = [
   { name: "Egg", logo: eggLogo, dark: true },
   { name: "Glamour", logo: glamourLogo, website: "https://www.glamour.com" },
   { name: "Netflix", logo: netflixLogo, website: "https://www.netflix.com" },
-  { name: "Vicky Crease Catering + Events", logo: vickyCreaseLogo },
+  { name: "Vicky Crease Catering + Events", logo: vickyCreaseLogo, website: "https://vickycrease.com" },
   { name: "Amarula", logo: amarulaLogo, website: "https://www.amarula.com" },
-  { name: "Touched By October", logo: touchedByOctoberLogo },
+  { name: "Touched By October", logo: touchedByOctoberLogo, website: "https://www.touchedbyoctoberbeauty.com" },
 ];
 
 export default function Brands() {
